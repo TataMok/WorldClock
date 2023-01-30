@@ -47,11 +47,12 @@ function updateCity(event) {
     let cityTimeZone = event.target.value;
 if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
+    currrentElement.innerHTML = currentTime.format(`MMMM Do YYYY`);
+    currentTimeElement.innerHTML = cyrrentTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
 
 }
-
-
-
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimeZone);
     let citiesElent = document.querySelector("#cities");
