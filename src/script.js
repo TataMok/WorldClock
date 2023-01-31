@@ -71,24 +71,4 @@ let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
 
 
-function allCities(event) {
-  let allCities = moment().tz(timeZone);
-  allCities.innerHTML = `
-   <div class="city"><div>
-                    <h2>
-                        ${timeZone.replace("_", " ").split("/").pop()}
-                    </h2>
-                    <div class="date">${currentTime.format(
-                      "dddd, MMMM D, YYYY"
-                    )}</div>
-                </div>
-                <div class="time">${currentTime.format(
-                  "h:mm:ss [<small>]A[</small>]"
-                )}</div>
-            </div>`;             
-}
 
-updateTime();
-
-let allCitiesElement = document.querySelector("#all");
-allCities.addEventListener("click", back);
